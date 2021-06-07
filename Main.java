@@ -1,7 +1,7 @@
 // Bank Account
 //   Acc Number
 //   Name
-
+ 
 
 // Extension means Inherticance
 // Without Inheritance, Kokopyahin natin lahat ng attributes ng bank account
@@ -24,15 +24,13 @@ public class Main{
         // UPDATE #5 - CHANGE FROM acn TO accNumber
         
         String accNumber = "";
-        
         String name;
         long balance = 0;
-        boolean found = false;
-        boolean isNumber = false;
         double mortgage = 0;
         double allMortgage = 0;
-        int allMonths = 0;
-        int overall = 0;
+
+        boolean found;
+        boolean isNumber;
 
         int chance = 0;
         boolean unlocked = false;
@@ -46,10 +44,16 @@ public class Main{
         //create initial accounts
 
    
-        System.out.println("Welcome to Excess Dime. Please Create and Account");
+        System.out.println("Welcome to Excess Dime. Please Create an Account");
         // UPDATE #5 - THERE IS A 1 SECOND DELAY
         Thread.sleep(1000);
 
+        
+        
+        // -------------------------------------------------------------------------------------------------
+        
+        
+        
         // Update #3 - Validation About Letters - Account Number
         System.out.print("Enter Account Number: ");
 
@@ -65,12 +69,13 @@ public class Main{
                 }
           
             }else{
-                System.out.println("Ge, Bobohan mo pa. Nakita mo na ngang Numbers, Letters Nilalagay mo");
-                System.out.print("Make Another Pin. Paki ayos. Wag kang Bobo: ");
+                System.out.println("There May be A Letter or Invalid Character In Your Account Number");
+                System.out.print("Make Another Pin. : ");
                 isNumber = false;
                 scan.next();
             }
         }while(!(isNumber));
+
 
         // UPDATE #5 - THERE IS A 1 SECOND DELAY
         Thread.sleep(1000);
@@ -95,18 +100,22 @@ public class Main{
             }
         }while(!(isNumber));
 
-        Solving accounts = new Solving(accNumber, name, balance, mortgage, allMortgage, allMonths, overall, years, principal);
+        Solving accounts = new Solving(accNumber, name, balance, 
+                                        mortgage, allMortgage, 
+                                        years, principal);
 
         
-      
-    
-        int choice;
+
+
+
+        
+    // ---------------------------------------------------------------------------------------------------
+        int choice = 0;
         
         do {
             // UPDATE #5 - MUCH CLEANER MAIN MENU
             // System.out.println(years);
             // System.out.println("Please Remember To Just Pay With The Amount Of " + mortgage);
-            choice = 0;
             System.out.println(); 
             System.out.println("Welcome To Excess Dime. Please Choose What You Want From Our Main Menu");
             System.out.println("1. Display Your Account Information");
@@ -117,43 +126,48 @@ public class Main{
             System.out.println("6. Pay Your Loan");
             System.out.println("7. Exit");
             System.out.print("Your Choice: "); 
-            System.out.println(); 
 
             
             
             do{
             // UPDATE #5 - RESTRICTIONS ABOUT TYPING LETTERS IN THE CHOICE.
             
-            if(scan.hasNextInt()){
-                choice = scan.nextInt();
-                isNumber = true;
-                // UPDATE #5 - THERE IS A 1 SECOND DELAY
-                Thread.sleep(1000);
-            }else{
-                System.out.println("Ge, Bobohan mo pa. Nakita mo na ngang Numbers, Letters Nilalagay mo");
-                System.out.print("Make Another Choice. Paki ayos. Wag kang Bobo: ");
-                isNumber = false;
-                scan.next();
-                // UPDATE #5 - THERE IS A 1 SECOND DELAY
-                Thread.sleep(1000);
-            }
+                if(scan.hasNextInt()){
+                    choice = scan.nextInt();
+                    isNumber = true;
+                    // UPDATE #5 - THERE IS A 1 SECOND DELAY
+                    Thread.sleep(1000);
+                }else{
+                    System.out.println("Ge, Bobohan mo pa. Nakita mo na ngang Numbers, Letters Nilalagay mo");
+                    System.out.print("Make Another Choice. Paki ayos. Wag kang Bobo: ");
+                    isNumber = false;
+                    scan.next();
+                    // UPDATE #5 - THERE IS A 1 SECOND DELAY
+                    Thread.sleep(1000);
+                }
             }while(!(isNumber));
 
             // UPDATE #5 - CHANGE FROM "SWITCH STATEMENT" TO "IF STATEMENT" AND ADD MORE RESTRICTIONS
             if(choice == 1){
 
                 System.out.println(accounts.getAccountDetails());
+
                 // UPDATE #5 - THERE IS A 1 SECOND DELAY
+
                 Thread.sleep(1000);
 
 
             }else if (choice == 2){
+                
                 String accNumbers;
                 System.out.print("Enter Account No: "); 
                 accNumbers = scan.next();
-                found = true;
+                // 2003
+
                 long amount;
                 found = accounts.search(accNumbers);
+                // found = True;
+
                 if (found) {
                     System.out.print("Enter Amount You Want to Deposit: P");
                     do{
@@ -161,6 +175,7 @@ public class Main{
                             // CHECK AMOUNT
                             amount = scan.nextLong();
                             accounts.deposit(amount);
+                            
                             // UPDATE #5 - THERE IS A 1 SECOND DELAY
                             Thread.sleep(1000);
                             isNumber = true;                    
@@ -228,7 +243,7 @@ public class Main{
                     if(found){
 
                         // --------PRINCIPAL----------
-                        System.out.print("Enter Your Principal: ");
+                        System.out.print("Enter Your Principal: P");
                         do{     
                             while(true){
                                 
@@ -344,7 +359,7 @@ public class Main{
             }else if(choice == 5){
                 
                  // --------PRINCIPAL----------
-                        System.out.print("Enter Your Principal: ");
+                        System.out.print("Enter Your Principal: P");
                         do{     
                             while(true){
                                 

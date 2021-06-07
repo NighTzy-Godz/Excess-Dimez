@@ -2,15 +2,15 @@ import java.text.NumberFormat;
 public class Solving  extends Account {
     NumberFormat formatter = NumberFormat.getCurrencyInstance();
 
-    public Solving()throws InterruptedException{
+    public Solving(){
         super();
-    }
+    } 
 
     public Solving(String accNumber, String name,
                 long balance, double mortgage,
-                double allMortgage, int allMonths, 
-                int overall, int years, int principal){
-        super(accNumber,name, balance, mortgage, allMortgage, allMonths, overall, years, principal);
+                double allMortgage,  int years, int principal){
+
+        super(accNumber,name, balance, mortgage, allMortgage, years, principal);
     }
 
 
@@ -45,7 +45,7 @@ public class Solving  extends Account {
         if( amount > 0){
             // UPDATE #5 - 200_000 ANG MAXIMUM WITHDRAWAL ANG THERE WILL BE AN ERROR IF IT IS GREATER THAN THAT.
             if((amount) > balance || amount > maxWithdraw){
-                System.out.println("You Cannot Withdraw Because You Reach the Maximum Withdrawal Per Day Or Insufficient Balance Kasi Poor Ka");
+                System.out.println("You Cannot Withdraw Because You Reach the Maximum Withdrawal Per Day Or Insufficient Balance");
                 System.out.println(); 
                 // UPDATE #2 - CANNOT WITHDRAW IF BALANCE IS INSUFFICIENT
             }else{
@@ -53,7 +53,6 @@ public class Solving  extends Account {
                 balance -= amount;
                 System.out.println("Your Current Balance is " +  formatter.format(balance));
                 System.out.println(); 
-  
                 
             }
         }else{
@@ -77,9 +76,10 @@ public class Solving  extends Account {
         mortgage =  principal * ((interest * Math.pow(1 + interest, years)
         / (Math.pow(1 + interest, years) -1 )));
 
+
         allMortgage = mortgage * years;
-        allMonths = years;
-        overall = principal * years;
+
+
 
         System.out.println("Please Check Your Account Information");
         System.out.println(); 
@@ -106,11 +106,12 @@ public class Solving  extends Account {
         if( amount > 0){
             // UPDATE #5 - 200_000 ANG MAXIMUM WITHDRAWAL ANG THERE WILL BE AN ERROR IF IT IS GREATER THAN THAT.
             if((amount < maxPay)){
-                
+                 System.out.println(); 
                 System.out.println("You Cannot Pay Less Than Your Monthly Basis");
-                System.out.println("Make Another Payment: P");
+                System.out.println("Please Make Another Payment");
             // UPDATE #2 - CANNOT WITHDRAW IF BALANCE IS INSUFFICIENT
             }else{
+                System.out.println(); 
                 System.out.println("You Pay With an Amount of " +  formatter.format(amount));
                 allMortgage -= amount;
                 
