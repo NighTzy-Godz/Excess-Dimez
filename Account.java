@@ -7,7 +7,7 @@ public abstract class Account{
     protected long balance; 
     protected double mortgage;
     protected double allMortgage;
-    protected int allMonths;
+    protected int allMonths; 
     protected int overall;
     protected int years;
     protected int principal;

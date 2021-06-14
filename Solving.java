@@ -14,7 +14,7 @@ public class Solving  extends Account {
     }
 
 
-    
+     
 
     public void deposit(long amount){    
         long max = 2_000_000;

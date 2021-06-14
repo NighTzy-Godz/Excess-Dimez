@@ -81,7 +81,7 @@ public class Main{
         Thread.sleep(1000);
         System.out.print("Enter Your Name: ");
         name = scan.next();
-
+ 
         // UPDATE #5 - THERE IS A 1 SECOND DELAY
         Thread.sleep(1000);
         // Update #3 - Validation About Letters - Down Payment
@@ -93,10 +93,11 @@ public class Main{
                 balance = scan.nextLong();
                 isNumber = true;
             }else{
-                System.out.println("Another Bobo Spotted. Wala Kang Nang Future Sa Mundo At Sa Tingin Ko Sa Adonis Gay Bar Na Punta Mo");
-                System.out.print("Make Another Down Payment. Paki ayos. Wag kang Bobo: ");
+                System.out.println("There is a Non-Number Character");
+                System.out.print("Please Make Another Down Payment: ");
                 isNumber = false;
                 scan.next();
+                
             }
         }while(!(isNumber));
 
@@ -138,8 +139,8 @@ public class Main{
                     // UPDATE #5 - THERE IS A 1 SECOND DELAY
                     Thread.sleep(1000);
                 }else{
-                    System.out.println("Ge, Bobohan mo pa. Nakita mo na ngang Numbers, Letters Nilalagay mo");
-                    System.out.print("Make Another Choice. Paki ayos. Wag kang Bobo: ");
+                    System.out.println("There is a Non-Number Character");
+                    System.out.print("Make Another Choice: ");
                     isNumber = false;
                     scan.next();
                     // UPDATE #5 - THERE IS A 1 SECOND DELAY
@@ -181,8 +182,8 @@ public class Main{
                             isNumber = true;                    
                             
                         }else{
-                            System.out.println("Another Bobo Spotted. Wala Kang Nang Future Sa Mundo At Sa Tingin Ko Sa Adonis Gay Bar Na Punta Mo");
-                            System.out.print("Make Another Deposit. Paki ayos. Wag kang Bobo: ");
+                            System.out.println("There is a Non-Number Character");
+                            System.out.print("Please Make Another Deposit: ");
                             isNumber = false;
                             scan.next();
                         }
@@ -216,8 +217,8 @@ public class Main{
                             isNumber = true;                    
                             
                         }else{
-                            System.out.println("Wag Mo Naman Araw Arawin Pagka Bobo Mo Please? Nakakaumay Na Sobra :>");
-                            System.out.print("Make Another Deposit. Paki ayos. Wag kang Bobo: ");
+                            System.out.println("There is a Non-Number Character");
+                            System.out.print("Make Another Deposit: ");
                             isNumber = false;
                             scan.next();
                         }
@@ -256,11 +257,11 @@ public class Main{
                                             
                                     }else{
                                         System.out.println("Principal Should Be Greater than 0");
-                                        System.out.print("Make Another Principal: ");
+                                        System.out.print("Make Another Principal: P");
                                     }
                                 }else{
-                                    System.out.println("Wag Mo Naman Araw Arawin Pagka Bobo Mo, Nawawalan Nako Ng Interes. Umay Talaga Sa Mga Pinoy :>");
-                                    System.out.print("Make Another Interes. Paki ayos. Wag kang Bobo: ");
+                                    System.out.println("There is a Non-Number Character");
+                                    System.out.print("Please Make Another Principal.");
                                     isNumber = false;
                                     scan.next();
                                 }
@@ -279,7 +280,7 @@ public class Main{
                                     interest = scan.nextDouble();
                                     if(interest > 0){
                                         if((interest) > maxInterest){
-                                            System.out.print("Laki Ng Interes Mo. Gusto Mo Bang Mabaon Sa Utang? Less Than 15 Lang Kung Ayaw Mong Maghirap");
+                                            System.out.print("Less Than 15 and Greater Than 0 For Interest");
                                         }else{
                                             interest = interest / 100 / 12;
                                         
@@ -294,8 +295,8 @@ public class Main{
                                     }
                                     
                                 }else{
-                                    System.out.println("Wag Mo Naman Araw Arawin Pagka Bobo Mo, Nawawalan Nako Ng Interes. Nakita Mong Numbers Kailangan, Letters Nilalagay mo. Umay Talaga Sa Mga Pinoy.  :>");
-                                    System.out.print("Make Another Interes. Paki ayos. Wag kang Bobo: ");
+                                    System.out.println("There is a Non-Number Character");
+                                    System.out.print("Please Make Another Interest: ");
                                     isNumber = false;
                                     scan.next();
                                 }               
@@ -315,7 +316,7 @@ public class Main{
                                     years = scan.nextInt();
                                     if(years > 0){   
                                         if((years) > maxYears){
-                                            System.out.println("Tagal Naman Masyado Niyan. Magkaka Anak Na Ako Bago Ka Makabayad. Less Than 25 Lang Ilagay Mo");
+                                            System.out.println("Less Than 25 Years Only");
                                             System.out.print("Make Another Years Of Payment: ");
                                         }else{
                                             years += years * 12;
@@ -333,8 +334,8 @@ public class Main{
 
                                     }
                                 }else{
-                                    System.out.println("Please, Isang Step Nalang Para Makakuha Ka Ng Loan. Gusto Mo Bang Makakuha Ng Bahay O Sa Ilalim Ng Tulay Ka Nalang Tumira? Mangupahan Ka Nalang Siguro :>");
-                                    System.out.print("Make Another Years Of Payment. Paki Ayos Kung Gusto Mong Magkabahay :> ");
+                                    System.out.println("There is a Non-Number Character");
+                                    System.out.print("Please Make Another Years Of Payment. ");
                                     isNumber = false;
                                     scan.next();
                                 } 
@@ -352,7 +353,7 @@ public class Main{
                         Thread.sleep(1000);
                     }
                 }else{
-                    System.out.println("Oh, Umutang Ka Tapos Di Mo Babayaran Ng Buo? Tapusin Mo Muna Bayarin Mo Bago Ka Ulit Umutang!");
+                    System.out.println("Please Pay Your Current Loan Before Applying For Another Loan. Thank You");
                     Thread.sleep(1000);
                 }
 
@@ -372,11 +373,11 @@ public class Main{
                                             
                                     }else{
                                         System.out.println("Principal Should Be Greater than 0");
-                                        System.out.print("Make Another Principal: ");
+                                        System.out.print("Please Make Another Principal: ");
                                     }
                                 }else{
-                                    System.out.println("Wag Mo Naman Araw Arawin Pagka Bobo Mo, Nawawalan Nako Ng Interes. Umay Talaga Sa Mga Pinoy :>");
-                                    System.out.print("Make Another Interes. Paki ayos. Wag kang Bobo: ");
+                                    System.out.println("OOOPS There is a non-number character");
+                                    System.out.print("Please Make Another Principal: P");
                                     isNumber = false;
                                     scan.next();
                                 }
@@ -395,7 +396,7 @@ public class Main{
                                     interest = scan.nextDouble();
                                     if(interest > 0){
                                         if((interest) > maxInterest){
-                                            System.out.print("Laki Ng Interes Mo. Gusto Mo Bang Mabaon Sa Utang? Less Than 15 Lang Kung Ayaw Mong Maghirap");
+                                            System.out.println("Less Than 15 and Greater Than 0");
                                         }else{
                                             interest = interest / 100 / 12;
 
@@ -410,8 +411,8 @@ public class Main{
                                     }
                                     
                                 }else{
-                                    System.out.println("Wag Mo Naman Araw Arawin Pagka Bobo Mo, Nawawalan Nako Ng Interes. Nakita Mong Numbers Kailangan, Letters Nilalagay mo. Umay Talaga Sa Mga Pinoy.  :>");
-                                    System.out.print("Make Another Interes. Paki ayos. Wag kang Bobo: ");
+                                    System.out.println("Non-Numbers Are Not Allowed");
+                                    System.out.print("Please Make Another Interest: ");
                                     isNumber = false;
                                     scan.next();
                                 }               
@@ -431,7 +432,7 @@ public class Main{
                                     years = scan.nextInt();
                                     if(years > 0){   
                                         if((years) > maxYears){
-                                            System.out.println("Tagal Naman Masyado Niyan. Magkaka Anak Na Ako Bago Ka Makabayad. Less Than 25 Lang Ilagay Mo");
+                                            System.out.println("Less Than 25 Years Only");
                                             System.out.print("Make Another Years Of Payment: ");
                                         }else{
                                             years += years * 12;
@@ -447,8 +448,8 @@ public class Main{
 
                                     }
                                 }else{
-                                    System.out.println("Please, Isang Step Nalang Para Makakuha Ka Ng Loan. Gusto Mo Bang Makakuha Ng Bahay O Sa Ilalim Ng Tulay Ka Nalang Tumira? Mangupahan Ka Nalang Siguro :>");
-                                    System.out.print("Make Another Years Of Payment. Paki Ayos Kung Gusto Mong Magkabahay :> ");
+                                    System.out.println("Seems Like That There is a Invalid Characters");
+                                    System.out.print("Please Make Another Years Of Payment: ");
                                     isNumber = false;
                                     scan.next();
                                 } 
@@ -485,8 +486,8 @@ public class Main{
                                 accounts.payLoan(amount);
                                 isNumber = true;
                             }else{
-                                System.out.println("OOPS.... BAKIT NON-NUMBERS YANG NILALAGAY MO HUH??????? ");
-                                System.out.print("Make Another Payment. Paki Ayos Kung Gusto Mong Mabayaran Utang Mo :> ");
+                                System.out.println("Letters Are Not Allowed ");
+                                System.out.print("Please Make Another Payment, THank You: ");
                                 isNumber = false;
                                 scan.next();
                             } 
@@ -502,31 +503,23 @@ public class Main{
                         Thread.sleep(1000);
                     }
                 }else{
-                    System.out.println("You Dont Have Any Loans");
+                    System.out.println("You Dont Have Any Existing Loans");
                     Thread.sleep(1000);
                 }  
                  
                 
             }else if(choice == 7){
-                System.out.println("THANK YOU FOR USING EXCESS DIME. SORRY MAINIT ULO KO NGAYON HEHEHEHE. WE HOPE TO SEE YOU AGAIN");
+                System.out.println("THANK YOU FOR USING EXCESS DIME. WE HOPE TO SEE YOU AGAIN");
                 break;
 
             }         
             else{
-                System.out.println("Bawas Bawasan Pagka Bobo Please. Pito Lang Pagpipilian Mo, Kung Ano Ano Nilalagay Mo.");
+                System.out.println("It Looks Like That We Dont Have That In Our Choices. Please Make Another One: ");
                 Thread.sleep(1000);
             }             
         }while (choice != 7);
 
-        // -----------------------
-        
-            
-        
+        // -----------------------   
     }
-
-
- 
-     
-    
- 
 }
+// -------------------------------- END ----------------------
