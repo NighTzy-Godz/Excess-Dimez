@@ -86,10 +86,5 @@ public abstract class Account{
 
     public abstract void payLoan(int amount);
     
-
- 
-
-
-    // Setter
     
 }

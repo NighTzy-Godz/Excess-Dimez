@@ -457,7 +457,10 @@ public class Main{
                             }            
                         }while(!(isNumber));
 
-                        accounts.mortgageCalcu(principal, interest, years);
+                        double mortgages = principal * ((interest * Math.pow(1 + interest, years)
+                        / (Math.pow(1 + interest, years) -1 )));
+
+                        System.out.println("The Monthly Payment For Your Calculated Loan is " + formatter.format(mortgages));
 
                         Thread.sleep(1000);
 
